@@ -1,0 +1,222 @@
+import { Link } from "react-router-dom";
+
+const WhyChooseUs = () => {
+  return (
+    <div className="font-sans text-green-950">
+
+        {/* ================= HEADER ================= */}
+       <header className="bg-green-950 text-green-50 sticky top-0 z-50 shadow-lg">
+        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+      <img
+        src="/image/logo.png"   // 🔁 replace with your actual path
+        alt="GreenVolt Logo"
+        className="w-10 h-10 rounded-full object-contain"
+      />
+      <h1 className="text-2xl font-bold tracking-widest">
+        GREEN<span className="text-gray-400">VOLT</span>
+      </h1>
+    </div>
+
+
+          <nav className="hidden md:flex gap-8 text-sm font-medium">
+            <Link to="/" className="hover:text-green-400 transition">Home</Link>
+            <Link to="/about" className="hover:text-green-400 transition">About</Link>
+            <Link to="/vehicles" className="hover:text-green-400 transition">Vehicles</Link>
+            <Link to="/WhyChooseUs" className="hover:text-green-400 transition">Why Choose Us</Link>
+            <Link to="/contact" className="hover:text-green-400 transition">Contact</Link>
+          </nav>
+
+          <Link
+            to="/contact"
+            className="bg-green-500 text-green-950 px-4 py-2 rounded-xl text-sm font-semibold hover:bg-green-400 transition"
+          >
+            Visit Showroom
+          </Link>
+        </div>
+      </header>
+
+      {/* ================= PAGE HERO ================= */}
+      <section className="bg-green-950 text-white py-28 text-center">
+        <h1 className="text-4xl md:text-5xl font-extrabold mb-4 tracking-wide">
+          Why Choose <span className="text-gray-400">GREENVOLT</span>
+        </h1>
+        <p className="text-gray-300 max-w-3xl mx-auto text-lg">
+          Discover what sets GREENVOLT apart as your trusted partner in electric
+          mobility in Gujarat.
+        </p>
+      </section>
+
+      {/* ================= CORE REASONS ================= */}
+      <section className="bg-gray-50 py-24">
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10">
+
+          {[
+            {
+              title: "Advanced Technology",
+              desc: "Latest EV technology with smart features for a superior riding experience.",
+              icon: "⚡",
+            },
+            {
+              title: "Eco-Friendly",
+              desc: "Zero emissions for a cleaner environment and reduced carbon footprint.",
+              icon: "🌿",
+            },
+            {
+              title: "Safety First",
+              desc: "Comprehensive safety features built into every vehicle we offer.",
+              icon: "🛡️",
+            },
+            {
+              title: "Premium Quality",
+              desc: "High-quality materials and craftsmanship you can rely on.",
+              icon: "🏆",
+            },
+          ].map((item, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-3xl p-8 shadow-md hover:shadow-xl transition-all duration-300 flex gap-6"
+            >
+              <div className="w-14 h-14 flex items-center justify-center rounded-xl bg-gray-100 text-gray-900 text-2xl">
+                {item.icon}
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  {item.title}
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  {item.desc}
+                </p>
+              </div>
+            </div>
+          ))}
+
+        </div>
+      </section>
+
+      {/* ================= TRUST STATS ================= */}
+      <section className="bg-gray-100 py-24">
+        <div className="max-w-6xl mx-auto px-6 text-center">
+          <h2 className="text-3xl font-bold text-gray-90 mb-10">
+            Trusted by Customers
+          </h2>
+
+          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            {[
+              ["500+", "Happy Customers"],
+              ["3+ yrs", "Years of Excellence"],
+              ["24/7", "Customer Support"],
+              ["100%", "Customer Satisfaction"],
+            ].map(([value, label], i) => (
+              <div
+                key={i}
+                className="bg-green-950 text-white rounded-2xl p-8 shadow hover:shadow-lg transition"
+              >
+                <h3 className="text-3xl font-extrabold text-white mb-2">
+                  {value}
+                </h3>
+                <p className="text-white text-sm">
+                  {label}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ================= DIFFERENTIATORS ================= */}
+      <section className="bg-gray-50 py-28">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">
+            What Makes Us Different
+          </h2>
+          <p className="text-gray-600 mb-12 max-w-3xl mx-auto">
+            At GREENVOLT, we combine technology, sustainability, and customer-first
+            values to deliver an unmatched electric vehicle experience.
+          </p>
+
+          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8">
+            {[
+              "Personalized Customer Service",
+              "Flexible Financing Solutions",
+              "Extensive EV Knowledge",
+              "Local Market Expertise",
+            ].map((text, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-xl p-6 shadow hover:shadow-lg transition"
+              >
+                <p className="text-gray-700 text-sm font-medium">
+                  {text}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ================= CTA ================= */}
+      <section className="bg-white text-green-900 font-bold py-24 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          Ready to Go Electric?
+        </h2>
+        <p className="text-green-900 mb-8 max-w-3xl mx-auto">
+          Experience the future of transportation with GREENVOLT.
+          Visit our showroom or schedule a test drive today.
+        </p>
+
+        <div className="flex flex-wrap justify-center gap-6">
+          <a
+            href="/vehicles"
+            className=" border border-gray-200 text-black px-8 py-3 rounded-full font-semibold hover:bg-gray-300 hover:bg-green-900 transition"
+          >
+            Explore Vehicles
+          </a>
+          <a
+            href="/contact"
+            className="border border-gray-200 text-black px-8 py-3 rounded-full font-semibold hover:bg-gray-300 hover:bg-green-900 transition"
+          >
+            Visit Showroom
+          </a>
+        </div>
+      </section>
+
+      {/* ================= FOOTER ================= */}
+
+      {/* ===== FOOTER ===== */}
+      <footer className="bg-green-950 text-green-100 py-12">
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+          <div>
+            <h3 className="text-xl font-bold mb-2">GREENVOLT</h3>
+            <p className="text-sm">
+              Driving India towards a smarter electric future.
+            </p>
+          </div>
+
+          <div>
+            <h4 className="font-semibold mb-2">Quick Links</h4>
+            <ul className="space-y-2 text-sm">
+              <li>Home</li>
+              <li>About</li>
+              <li>Vehicles</li>
+              <li>Contact</li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-semibold mb-2">Contact</h4>
+            <p className="text-sm">Mahesana, Gujarat</p>
+            <p className="text-sm">📞 +91 XXXXX XXXXX</p>
+          </div>
+        </div>
+
+        <div className="text-center text-xs text-green-400 mt-8">
+          © 2025 GREENVOLT. All rights reserved.
+        </div>
+      </footer>
+
+    </div>
+  );
+};
+
+export default WhyChooseUs;
