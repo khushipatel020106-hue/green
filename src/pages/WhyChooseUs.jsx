@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const WhyChooseUs = () => {
+const Whychooseus = () => {
   return (
     <div className="font-sans text-green-950">
 
@@ -23,7 +23,7 @@ const WhyChooseUs = () => {
             <Link to="/" className="hover:text-green-400 transition">Home</Link>
             <Link to="/about" className="hover:text-green-400 transition">About</Link>
             <Link to="/vehicles" className="hover:text-green-400 transition">Vehicles</Link>
-            <Link to="/WhyChooseUs" className="hover:text-green-400 transition">Why Choose Us</Link>
+            <Link to="/WhyChooseUs" className="hover:text-green-400 transition">WhyChooseUs</Link>
             <Link to="/contact" className="hover:text-green-400 transition">Contact</Link>
           </nav>
 
@@ -219,4 +219,4 @@ const WhyChooseUs = () => {
   );
 };
 
-export default WhyChooseUs;
+export default Whychooseus;
