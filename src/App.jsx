@@ -4,7 +4,8 @@ import About from "./pages/About";
 import Vehicles from "./pages/Vehicles";
 import Contact from "./pages/Contact";
 import "./index.css";
-import Whychooseus from "./pages/Whychooseus";
+import Whyus from "./pages/Whyus";
+
 
 
 
@@ -14,8 +15,7 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/vehicles" element={<Vehicles />} />
-      
-      <Route path="/whychooseus" element={<Whychooseus />} />
+      <Route path="/whyus" element={<Whyus />} />
       <Route path="/contact" element={<Contact />} />
     </Routes>
   );

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const Whychooseus = () => {
+const Whyus = () => {
   return (
     <div className="font-sans text-green-950">
 
@@ -267,4 +267,4 @@ const Whychooseus = () => {
   );
 };
 
-export default Whychooseus;
+export default Whyus;

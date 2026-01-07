@@ -23,7 +23,7 @@ const About = () => {
             <Link to="/" className="hover:text-green-400 transition">Home</Link>
             <Link to="/about" className="hover:text-green-400 transition">About</Link>
             <Link to="/vehicles" className="hover:text-green-400 transition">Vehicles</Link>
-            <Link to="/whychooseus" className="hover:text-green-400 transition">WhyChooseUs</Link>
+            <Link to="/whyus" className="hover:text-green-400 transition">WhyChooseUs</Link>
             <Link to="/contact" className="hover:text-green-400 transition">Contact</Link>
           </nav>
 
