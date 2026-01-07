@@ -1,22 +1,54 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
+
+const vehicles = [
+  {
+    id: 1,
+    name: "GreenVolt Scooter",
+    image: "/image/i1.png",
+    description: "Smart electric scooter designed for modern urban mobility.",
+    range: "120 km",
+    charging: "Fast Charging – 1.5 hrs",
+    price: "₹1.2 Lakhs",
+  },
+  {
+    id: 2,
+    name: "GreenVolt Bike",
+    image: "/image/i2.png",
+    description: "High performance EV bike with premium comfort and safety.",
+    range: "150 km",
+    charging: "Fast Charging – 2 hrs",
+    price: "₹2.5 Lakhs",
+  },
+  {
+    id: 3,
+    name: "GreenVolt Cargo",
+    image: "/image/i3.png",
+    description: "Luxury electric cargo vehicle built for commercial use.",
+    range: "180 km",
+    charging: "Ultra Fast – 1 hr",
+    price: "₹3.8 Lakhs",
+  },
+];
 
 const Home = () => {
+  const [selectedVehicle, setSelectedVehicle] = useState(null);
+
   return (
     <>
       {/* ================= HEADER ================= */}
       <header className="bg-green-950 text-green-50 sticky top-0 z-50 shadow-lg">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-3">
-      <img
-        src="/image/logo.png"   // 🔁 replace with your actual path
-        alt="GreenVolt Logo"
-        className="w-10 h-10 rounded-full object-contain"
-      />
-      <h1 className="text-2xl font-bold tracking-widest">
-        GREEN<span className="text-gray-400">VOLT</span>
-      </h1>
-    </div>
-
+            <img
+              src="/image/logo.png"
+              alt="GreenVolt Logo"
+              className="w-10 h-10 rounded-full object-contain"
+            />
+            <h1 className="text-2xl font-bold tracking-widest">
+              GREEN<span className="text-gray-400">VOLT</span>
+            </h1>
+          </div>
 
           <nav className="hidden md:flex gap-8 text-sm font-medium">
             <Link to="/" className="hover:text-green-400 transition">Home</Link>
@@ -136,25 +168,37 @@ const Home = () => {
         </section>
 
         {/* ================= VEHICLES ================= */}
-        <section className="py-24 max-w-7xl mx-auto px-6">
-          <h3 className="text-3xl font-bold text-center mb-14 text-green-950">
+        <section className="py-28 max-w-7xl mx-auto px-6">
+          <h3 className="text-3xl font-bold text-center mb-16 text-green-950">
             Our Electric Vehicles
           </h3>
 
-          <div className="grid md:grid-cols-3 gap-10">
-            {[
-              { name: "GreenVolt Scooter", img: "/image/i1.png", range: "120 km" },
-              { name: "GreenVolt Bike", img: "/image/i2.png", range: "150 km" },
-              { name: "GreenVolt Cargo", img: "/image/i3.png", range: "180 km" },
-            ].map((v, i) => (
-              <div key={i} className="bg-white rounded-3xl shadow hover:shadow-2xl transition overflow-hidden">
+          <div className="grid md:grid-cols-3 gap-12">
+            {vehicles.map((v) => (
+              <div
+                key={v.id}
+                className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition"
+              >
                 <div className="h-56 bg-green-100 flex items-center justify-center">
-                  <img src={v.img} alt={v.name} className="h-44 object-contain hover:scale-110 transition" />
+                  <img
+                    src={v.image}
+                    alt={v.name}
+                    className="h-44 object-contain group-hover:scale-110 transition duration-700"
+                  />
                 </div>
-                <div className="p-6">
-                  <h4 className="font-bold text-xl text-green-950">{v.name}</h4>
-                  <p className="text-sm text-gray-500 mt-2">⚡ Range: {v.range}</p>
-                  <button className="mt-6 w-full bg-green-900 text-green-50 py-3 rounded-xl hover:bg-green-700 transition">
+                <div className="p-8">
+                  <h4 className="text-xl font-semibold mb-3 text-green-950">
+                    {v.name}
+                  </h4>
+                  <p className="text-gray-600 text-sm mb-3">
+                    {v.description}
+                  </p>
+                  <p className="text-sm text-gray-500 mb-5">⚡ Range: {v.range}</p>
+
+                  <button
+                    onClick={() => setSelectedVehicle(v)}
+                    className="mt-2 w-full bg-green-900 text-green-50 py-3 rounded-xl hover:bg-green-700 transition"
+                  >
                     View Details →
                   </button>
                 </div>
@@ -184,84 +228,146 @@ const Home = () => {
 
       </main>
 
-      {/* ================= FOOTER ================= */}
-<footer className="bg-green-950 text-white">
-  <div className="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-3 gap-12">
+      {/* ================= POPUP MODAL ================= */}
+      {selectedVehicle && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60"
+          onClick={() => setSelectedVehicle(null)}
+        >
+          <div
+            className="bg-white rounded-3xl max-w-lg w-full p-8 relative animate-scaleUp"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setSelectedVehicle(null)}
+              className="absolute top-4 right-4 text-xl text-gray-500 hover:text-black"
+            >
+              ✕
+            </button>
 
-    {/* LEFT */}
-    <div>
-      <div className="flex items-center gap-3 mb-5">
-        <img
-          src="/image/logo.png"
-          alt="Greenvolt Logo"
-          className="w-12 h-12 rounded-full object-contain"
-        />
-        <div>
-          <h3 className="text-white text-xl font-bold tracking-wide">
-            GREENVOLT
-          </h3>
-          <p className="text-sm text-gray-400">Mahesana, Gujarat</p>
+            <div className="h-56 bg-green-100 flex items-center justify-center rounded-2xl mb-6">
+              <img
+                src={selectedVehicle.image}
+                alt={selectedVehicle.name}
+                className="h-44 object-contain"
+              />
+            </div>
+
+            <h4 className="text-2xl font-bold mb-3 text-green-950">
+              {selectedVehicle.name}
+            </h4>
+
+            <p className="text-gray-600 mb-4">
+              {selectedVehicle.description}
+            </p>
+
+            <div className="space-y-2 text-sm text-gray-800">
+              <p><strong>Range:</strong> {selectedVehicle.range}</p>
+              <p><strong>Charging:</strong> {selectedVehicle.charging}</p>
+              <p><strong>Price:</strong> {selectedVehicle.price}</p>
+            </div>
+
+            <Link
+              to="/contact"
+              className="mt-6 block text-center bg-green-900 text-white py-3 rounded-xl hover:bg-green-700 transition"
+            >
+              Book Test Ride
+            </Link>
+          </div>
         </div>
-      </div>
+      )}
 
-      <p className="text-sm leading-relaxed max-w-sm">
-        Leading the electric revolution in Gujarat with sustainable,
-        stylish, and reliable electric vehicles.
-      </p>
-    </div>
+      {/* ================= FOOTER ================= */}
+      <footer className="bg-green-950 text-white">
+        <div className="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-3 gap-12">
 
-    {/* MIDDLE */}
-    <div>
-      <h4 className="text-white font-semibold text-lg mb-5">
-        Quick Links
-      </h4>
-      <ul className="space-y-3 text-sm">
-        <li><Link to="/" className="hover:text-green-400">About Us</Link></li>
-        <li><Link to="/vehicles" className="hover:text-green-400">Our Vehicles</Link></li>
-        <li><Link to="/whychooseus" className="hover:text-green-400">Why Choose Us</Link></li>
-        <li><Link to="/contact" className="hover:text-green-400">Contact</Link></li>
-      </ul>
-    </div>
+          {/* LEFT */}
+          <div>
+            <div className="flex items-center gap-3 mb-5">
+              <img
+                src="/image/logo.png"
+                alt="Greenvolt Logo"
+                className="w-12 h-12 rounded-full object-contain"
+              />
+              <div>
+                <h3 className="text-white text-xl font-bold tracking-wide">
+                  GREENVOLT
+                </h3>
+                <p className="text-sm text-gray-400">Mahesana, Gujarat</p>
+              </div>
+            </div>
 
-    {/* RIGHT */}
-    <div>
-      <h4 className="text-white font-semibold text-lg mb-5">
-        Contact Info
-      </h4>
+            <p className="text-sm leading-relaxed max-w-sm">
+              Leading the electric revolution in Gujarat with sustainable,
+              stylish, and reliable electric vehicles.
+            </p>
+          </div>
 
-      <ul className="space-y-4 text-sm">
-        <li className="flex gap-3">
-          <span className="text-green-400">📍</span>
-          <span>
-            10, Dediyasan G.I.D.C., Opp. Swagat Residency,
-            Modhera Road, Mehsana — 384 002
-          </span>
-        </li>
+          {/* MIDDLE */}
+          <div>
+            <h4 className="text-white font-semibold text-lg mb-5">
+              Quick Links
+            </h4>
+            <ul className="space-y-3 text-sm">
+              <li><Link to="/about" className="hover:text-green-400 transition">About Us</Link></li>
+              <li><Link to="/vehicles" className="hover:text-green-400 transition">Our Vehicles</Link></li>
+              <li><Link to="/whyus" className="hover:text-green-400 transition">Why Choose Us</Link></li>
+              <li><Link to="/contact" className="hover:text-green-400 transition">Contact</Link></li>
+            </ul>
+          </div>
 
-        <li className="flex gap-3">
-          <span className="text-green-400">📞</span>
-          <span>9712304660</span>
-        </li>
+          {/* RIGHT */}
+          <div>
+            <h4 className="text-white font-semibold text-lg mb-5">
+              Contact Info
+            </h4>
 
-        <li className="flex gap-3">
-          <span className="text-green-400">📞</span>
-          <span>9974451950</span>
-        </li>
+            <ul className="space-y-4 text-sm">
+              <li className="flex gap-3">
+                <span className="text-green-400">📍</span>
+                <span>
+                  10, Dediyasan G.I.D.C., Opp. Swagat Residency,
+                  Modhera Road, Mehsana — 384 002
+                </span>
+              </li>
 
-        <li className="flex gap-3">
-          <span className="text-green-400">✉️</span>
-          <span>info@greenvoltev.in</span>
-        </li>
-      </ul>
-    </div>
+              <li className="flex gap-3">
+                <span className="text-green-400">📞</span>
+                <span>9712304660</span>
+              </li>
 
-  </div>
+              <li className="flex gap-3">
+                <span className="text-green-400">📞</span>
+                <span>9974451950</span>
+              </li>
 
-  {/* BOTTOM */}
-  <div className="border-t border-white/10 text-center text-sm text-white py-6 px-6">
-    © 2024 GREENVOLT. All rights reserved | Electric Vehicles in Mahesana | EV Showroom Gujarat
-  </div>
-</footer>
+              <li className="flex gap-3">
+                <span className="text-green-400">✉️</span>
+                <span>info@greenvoltev.in</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        {/* BOTTOM */}
+        <div className="border-t border-white/10 text-center text-sm text-white py-6 px-6">
+          © 2024 GREENVOLT. All rights reserved | Electric Vehicles in Mahesana | EV Showroom Gujarat
+        </div>
+      </footer>
+
+      {/* ================= ANIMATION ================= */}
+      <style>
+        {`
+          @keyframes scaleUp {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+          }
+          .animate-scaleUp {
+            animation: scaleUp 0.3s ease-out;
+          }
+        `}
+      </style>
     </>
   );
 };
