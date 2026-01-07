@@ -1,5 +1,17 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import {
+  FaBolt,
+  FaLeaf,
+  FaShieldAlt,
+  FaStar,
+  FaRupeeSign,
+} from "react-icons/fa";
+
+import { MdBatteryChargingFull } from "react-icons/md";
+
+
+
 
 const vehicles = [
   {
@@ -71,84 +83,111 @@ const Home = () => {
       <main>
 
         {/* ================= HERO ================= */}
-        <section className="relative h-[85vh] flex items-center">
-          <img
-            src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2"
-            alt="Electric Vehicle"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-green-950/80"></div>
+       <section className="relative h-[85vh] flex items-center">
+  <img
+    src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2"
+    alt="Electric Vehicle"
+    className="absolute inset-0 w-full h-full object-cover"
+  />
+  <div className="absolute inset-0 bg-green-950/80"></div>
 
-          <div className="relative max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 text-green-50">
-            <div>
-              <h2 className="text-5xl font-extrabold mb-6 leading-tight">
-                Powering the <br />
-                <span className="text-green-400">Electric Future</span>
-              </h2>
+  <div className="relative max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 text-green-50">
+    <div>
+      <h2 className="text-5xl font-extrabold mb-6 leading-tight">
+        Powering the <br />
+        <span className="text-green-400">Electric Future</span>
+      </h2>
 
-              <p className="text-green-100 mb-8 text-lg max-w-xl">
-                GREENVOLT delivers smart, sustainable and premium electric
-                mobility solutions designed for India.
-              </p>
+      <p className="text-green-100 mb-8 text-lg max-w-xl">
+        GREENVOLT delivers smart, sustainable and premium electric
+        mobility solutions designed for India.
+      </p>
 
-              <div className="flex gap-5">
-                <Link
-                  to="/vehicles"
-                  className="bg-green-500 text-green-950 px-7 py-3 rounded-full font-semibold hover:bg-green-400 transition"
-                >
-                  Explore Vehicles
-                </Link>
-                <Link
-                  to="/contact"
-                  className="border border-green-400 px-7 py-3 rounded-full font-semibold hover:bg-green-400 hover:text-green-950 transition"
-                >
-                  Contact Us
-                </Link>
-              </div>
-            </div>
+      <div className="flex gap-5">
+        <Link
+          to="/vehicles"
+          className="bg-green-500 text-green-950 px-7 py-3 rounded-full font-semibold hover:bg-green-400 transition"
+        >
+          Explore Vehicles
+        </Link>
+        <Link
+          to="/contact"
+          className="border border-green-400 px-7 py-3 rounded-full font-semibold hover:bg-green-400 hover:text-green-950 transition"
+        >
+          Contact Us
+        </Link>
+      </div>
+    </div>
 
-            <div className="hidden md:block bg-white/10 backdrop-blur-lg rounded-2xl p-8">
-              <h4 className="text-xl font-semibold mb-4">Why Electric?</h4>
-              <ul className="space-y-3 text-green-100 text-sm">
-                <li>⚡ Zero Emissions</li>
-                <li>🔋 Advanced Battery Technology</li>
-                <li>💰 Low Running Cost</li>
-                <li>🌍 Sustainable Mobility</li>
-              </ul>
-            </div>
-          </div>
-        </section>
+    {/* WHY ELECTRIC CARD */}
+    <div className="hidden md:block bg-white/10 backdrop-blur-lg rounded-2xl p-8">
+      <h4 className="text-xl font-semibold mb-4 flex items-center gap-2">
+        <FaBolt className="text-green-400" />
+        Why Electric?
+      </h4>
+
+      <ul className="space-y-3 text-green-100 text-sm">
+        <li className="flex items-center gap-3">
+          <FaBolt className="text-green-400" />
+          Zero Emissions
+        </li>
+        <li className="flex items-center gap-3">
+          <MdBatteryChargingFull className="text-green-400" />
+          Advanced Battery Technology
+        </li>
+        <li className="flex items-center gap-3">
+          <FaRupeeSign className="text-green-400" />
+          Low Running Cost
+        </li>
+        <li className="flex items-center gap-3">
+          <FaLeaf className="text-green-400" />
+          Sustainable Mobility
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
 
         {/* ================= WHY CHOOSE ELECTRIC ================= */}
         <section className="py-24 bg-green-50">
-          <div className="max-w-7xl mx-auto px-6 text-center">
-            <h2 className="text-4xl font-bold mb-4 text-green-950">
-              Why Choose Electric?
-            </h2>
-            <p className="text-gray-600 max-w-3xl mx-auto mb-16">
-              Smart innovation meets sustainability and performance.
-            </p>
+  <div className="max-w-7xl mx-auto px-6 text-center">
+    <h2 className="text-4xl font-bold mb-4 text-green-950 flex items-center justify-center gap-3">
+      <FaBolt className="text-green-600" />
+      Why Choose Electric?
+    </h2>
 
-            <div className="grid md:grid-cols-4 gap-10">
-              {[
-                ["⚡", "Advanced Technology"],
-                ["🌿", "Eco Friendly"],
-                ["🛡️", "Safety First"],
-                ["⭐", "Premium Quality"],
-              ].map(([icon, title], i) => (
-                <div key={i} className="bg-white p-8 rounded-2xl shadow hover:shadow-xl transition">
-                  <div className="w-16 h-16 mx-auto mb-6 flex items-center justify-center bg-green-100 text-green-600 rounded-2xl text-3xl">
-                    {icon}
-                  </div>
-                  <h4 className="font-semibold text-lg text-green-950">{title}</h4>
-                  <p className="text-sm text-gray-500 mt-2">
-                    Built with next-gen electric innovation.
-                  </p>
-                </div>
-              ))}
-            </div>
+    <p className="text-gray-600 max-w-3xl mx-auto mb-16">
+      Smart innovation meets sustainability and performance.
+    </p>
+
+    <div className="grid md:grid-cols-4 gap-10">
+      {[
+        { icon: <FaBolt />, title: "Advanced Technology" },
+        { icon: <FaLeaf />, title: "Eco Friendly" },
+        { icon: <FaShieldAlt />, title: "Safety First" },
+        { icon: <FaStar />, title: "Premium Quality" },
+      ].map((item, i) => (
+        <div
+          key={i}
+          className="bg-white p-8 rounded-2xl shadow hover:shadow-xl transition"
+        >
+          <div className="w-16 h-16 mx-auto mb-6 flex items-center justify-center bg-green-100 text-green-600 rounded-2xl text-3xl">
+            {item.icon}
           </div>
-        </section>
+
+          <h4 className="font-semibold text-lg text-green-950 flex items-center justify-center gap-2">
+            {item.title}
+          </h4>
+
+          <p className="text-sm text-gray-500 mt-2">
+            Built with next-gen electric innovation.
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
 
         {/* ================= STATS ================= */}
         <section className="bg-green-900 py-20">

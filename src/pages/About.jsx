@@ -230,7 +230,7 @@ const About = () => {
               href="/contact"
               className="border-2 border-gray-900 text-gray-900 px-10 py-4 rounded-full font-semibold hover:bg-gray-900 hover:text-white transition"
             >
-              Visit Showroom 📍
+              Visit Showroom 
             </a>
           </div>
         </div>

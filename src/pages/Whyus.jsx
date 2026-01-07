@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { FaBolt, FaLeaf, FaShieldAlt, FaAward } from "react-icons/fa";
+
 
 const Whyus = () => {
   return (
@@ -49,50 +51,52 @@ const Whyus = () => {
 
       {/* ================= CORE REASONS ================= */}
       <section className="bg-gray-50 py-24">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10">
+  <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10">
 
-          {[
-            {
-              title: "Advanced Technology",
-              desc: "Latest EV technology with smart features for a superior riding experience.",
-              icon: "⚡",
-            },
-            {
-              title: "Eco-Friendly",
-              desc: "Zero emissions for a cleaner environment and reduced carbon footprint.",
-              icon: "🌿",
-            },
-            {
-              title: "Safety First",
-              desc: "Comprehensive safety features built into every vehicle we offer.",
-              icon: "🛡️",
-            },
-            {
-              title: "Premium Quality",
-              desc: "High-quality materials and craftsmanship you can rely on.",
-              icon: "🏆",
-            },
-          ].map((item, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-3xl p-8 shadow-md hover:shadow-xl transition-all duration-300 flex gap-6"
-            >
-              <div className="w-14 h-14 flex items-center justify-center rounded-xl bg-gray-100 text-gray-900 text-2xl">
-                {item.icon}
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                  {item.title}
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  {item.desc}
-                </p>
-              </div>
-            </div>
-          ))}
-
+    {[
+      {
+        title: "Advanced Technology",
+        desc: "Latest EV technology with smart features for a superior riding experience.",
+        icon: <FaBolt />,
+      },
+      {
+        title: "Eco-Friendly",
+        desc: "Zero emissions for a cleaner environment and reduced carbon footprint.",
+        icon: <FaLeaf />,
+      },
+      {
+        title: "Safety First",
+        desc: "Comprehensive safety features built into every vehicle we offer.",
+        icon: <FaShieldAlt />,
+      },
+      {
+        title: "Premium Quality",
+        desc: "High-quality materials and craftsmanship you can rely on.",
+        icon: <FaAward />,
+      },
+    ].map((item, index) => (
+      <div
+        key={index}
+        className="bg-white rounded-3xl p-8 shadow-md hover:shadow-xl transition-all duration-300 flex gap-6"
+      >
+        <div className="w-14 h-14 flex items-center justify-center rounded-xl bg-gray-100 text-gray-900 text-2xl">
+          {item.icon}
         </div>
-      </section>
+
+        <div>
+          <h3 className="text-xl font-semibold text-gray-900 mb-2 flex items-center gap-2">
+            {item.title}
+          </h3>
+
+          <p className="text-gray-600 text-sm leading-relaxed">
+            {item.desc}
+          </p>
+        </div>
+      </div>
+    ))}
+
+  </div>
+</section>
 
       {/* ================= TRUST STATS ================= */}
       <section className="bg-gray-100 py-24">

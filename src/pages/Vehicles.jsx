@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { FaCreditCard, FaUniversity, FaCheckCircle } from "react-icons/fa";
+
 
 const Vehicles = () => {
   const vehicles = [
@@ -433,7 +435,7 @@ const Vehicles = () => {
       {/* EASY EMI */}
       <div className="rounded-2xl p-10 shadow-lg bg-gradient-to-b from-green-50 to-white text-center hover:shadow-2xl transition">
         <div className="w-16 h-16 mx-auto mb-6 flex items-center justify-center rounded-2xl bg-green-100 text-green-600 text-2xl">
-          💳
+          <FaCreditCard />
         </div>
 
         <h3 className="text-xl font-bold text-gray-900 mb-4">
@@ -448,17 +450,29 @@ const Vehicles = () => {
         </p>
 
         <ul className="text-left space-y-3 text-gray-700 text-sm">
-          <li>• Flexible tenure options</li>
-          <li>• Competitive interest rates</li>
-          <li>• Quick approval process</li>
-          <li>• Minimal documentation</li>
+          <li className="flex items-center gap-2">
+            <FaCheckCircle className="text-green-600" />
+            Flexible tenure options
+          </li>
+          <li className="flex items-center gap-2">
+            <FaCheckCircle className="text-green-600" />
+            Competitive interest rates
+          </li>
+          <li className="flex items-center gap-2">
+            <FaCheckCircle className="text-green-600" />
+            Quick approval process
+          </li>
+          <li className="flex items-center gap-2">
+            <FaCheckCircle className="text-green-600" />
+            Minimal documentation
+          </li>
         </ul>
       </div>
 
       {/* BANK LOANS */}
       <div className="rounded-2xl p-10 shadow-lg bg-gradient-to-b from-sky-50 to-white text-center hover:shadow-2xl transition">
         <div className="w-16 h-16 mx-auto mb-6 flex items-center justify-center rounded-2xl bg-sky-100 text-sky-600 text-2xl">
-          🏦
+          <FaUniversity />
         </div>
 
         <h3 className="text-xl font-bold text-gray-900 mb-4">
@@ -473,17 +487,29 @@ const Vehicles = () => {
         </p>
 
         <ul className="text-left space-y-3 text-gray-700 text-sm">
-          <li>• Partner bank network</li>
-          <li>• Pre-approved loans</li>
-          <li>• Instant loan processing</li>
-          <li>• Attractive interest rates</li>
+          <li className="flex items-center gap-2">
+            <FaCheckCircle className="text-sky-600" />
+            Partner bank network
+          </li>
+          <li className="flex items-center gap-2">
+            <FaCheckCircle className="text-sky-600" />
+            Pre-approved loans
+          </li>
+          <li className="flex items-center gap-2">
+            <FaCheckCircle className="text-sky-600" />
+            Instant loan processing
+          </li>
+          <li className="flex items-center gap-2">
+            <FaCheckCircle className="text-sky-600" />
+            Attractive interest rates
+          </li>
         </ul>
       </div>
 
       {/* GOVERNMENT SCHEMES */}
       <div className="rounded-2xl p-10 shadow-lg bg-gradient-to-b from-green-50 to-white text-center hover:shadow-2xl transition">
         <div className="w-16 h-16 mx-auto mb-6 flex items-center justify-center rounded-2xl bg-green-100 text-green-600 text-2xl">
-          ✔
+          <FaCheckCircle />
         </div>
 
         <h3 className="text-xl font-bold text-gray-900 mb-4">
@@ -498,10 +524,22 @@ const Vehicles = () => {
         </p>
 
         <ul className="text-left space-y-3 text-gray-700 text-sm">
-          <li>• FAME II benefits</li>
-          <li>• State government incentives</li>
-          <li>• Tax exemptions</li>
-          <li>• Registration fee waiver</li>
+          <li className="flex items-center gap-2">
+            <FaCheckCircle className="text-green-600" />
+            FAME II benefits
+          </li>
+          <li className="flex items-center gap-2">
+            <FaCheckCircle className="text-green-600" />
+            State government incentives
+          </li>
+          <li className="flex items-center gap-2">
+            <FaCheckCircle className="text-green-600" />
+            Tax exemptions
+          </li>
+          <li className="flex items-center gap-2">
+            <FaCheckCircle className="text-green-600" />
+            Registration fee waiver
+          </li>
         </ul>
       </div>
 

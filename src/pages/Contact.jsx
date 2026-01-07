@@ -1,4 +1,15 @@
 import { Link } from "react-router-dom";
+import {
+  FaMapMarkerAlt,
+  FaPhoneAlt,
+  FaEnvelope,
+  FaClock,
+  FaCarSide,
+  FaComments,
+  FaCalendarAlt
+} from "react-icons/fa";
+
+
 
 const Contact = () => {
   return (
@@ -95,7 +106,7 @@ const Contact = () => {
 
         <div className="pt-10">
           <div className="w-16 h-16 mx-auto mb-6 flex items-center justify-center rounded-2xl bg-green-100 text-green-600 text-2xl">
-            🚗
+            <FaCarSide />
           </div>
 
           <h3 className="text-xl font-bold mb-2">
@@ -116,7 +127,7 @@ const Contact = () => {
       <div className="bg-white rounded-2xl shadow-lg p-8 flex flex-col justify-between hover:shadow-xl transition">
         <div>
           <div className="w-16 h-16 mx-auto mb-6 flex items-center justify-center rounded-2xl bg-green-100 text-green-600 text-2xl">
-            💬
+            <FaComments />
           </div>
 
           <h3 className="text-xl font-bold mb-2">
@@ -137,7 +148,7 @@ const Contact = () => {
       <div className="bg-white rounded-2xl shadow-lg p-8 flex flex-col justify-between hover:shadow-xl transition">
         <div>
           <div className="w-16 h-16 mx-auto mb-6 flex items-center justify-center rounded-2xl bg-green-100 text-green-600 text-2xl">
-            📅
+            <FaCalendarAlt />
           </div>
 
           <h3 className="text-xl font-bold mb-2">
@@ -158,7 +169,7 @@ const Contact = () => {
       <div className="bg-white rounded-2xl shadow-lg p-8 flex flex-col justify-between hover:shadow-xl transition">
         <div>
           <div className="w-16 h-16 mx-auto mb-6 flex items-center justify-center rounded-2xl bg-green-100 text-green-600 text-2xl">
-            📞
+            <FaPhoneAlt />
           </div>
 
           <h3 className="text-xl font-bold mb-2">
@@ -181,87 +192,116 @@ const Contact = () => {
 
 
       {/* ================= CONTACT INFO + FORM ================= */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16">
-          
-          {/* Left: Contact Info */}
-          <div className="bg-white rounded-3xl shadow-2xl p-10 md:p-14">
-            <h2 className="text-3xl font-bold mb-6">Visit Our Showroom</h2>
+      <section className="py-20 bg-white">
+  <div className="max-w-7xl mx-auto px-6 grid gap-12 md:grid-cols-2">
 
-            <div className="space-y-5 text-gray-700">
-              <p>
-                <strong>GREENVOLT</strong> <br />
-                10, Dediyasan GIDC, Opp. Swagat Residency, <br />
-                Modhera Road, Mahesana – 384002, Gujarat, India
-              </p>
+    {/* ================= LEFT: CONTACT INFO ================= */}
+    <div className="space-y-6">
 
-              <p>
-                📞 <strong>Phone:</strong> <br />
-                +91 99744 51950 <br />
-                +91 97123 04660
-              </p>
+      {/* ADDRESS */}
+      <div className="bg-white rounded-2xl shadow-lg p-6">
+        <h2 className="text-xl font-semibold mb-3 flex items-center gap-2">
+          <FaMapMarkerAlt className="text-green-950" />
+          Visit Our Showroom
+        </h2>
 
-              <p>
-                ✉️ <strong>Email:</strong> <br />
-                info@greenvoltev.in <br />
-                sales@greenvoltev.in
-              </p>
+        <p className="text-green-950 text-sm leading-relaxed">
+          <strong>GREENVOLT</strong><br />
+          10, Dediyasan GIDC, Opp. Swagat Residency,<br />
+          Modhera Road, Mahesana – 384002, Gujarat
+        </p>
+      </div>
 
-              <p>
-                ⏰ <strong>Working Hours:</strong> <br />
-                Monday – Saturday : 9:30 AM – 7:30 PM
-              </p>
-            </div>
-          </div>
+      {/* CONTACT DETAILS */}
+      <div className="bg-white rounded-2xl shadow-lg p-6">
+        <h3 className="text-lg font-semibold mb-3 flex items-center gap-2">
+          {/* <FaPhoneAlt className="text-green-600" /> */}
+          Contact Details
+        </h3>
 
-          {/* Right: Contact Form */}
-          <div className="bg-gray-50 rounded-2xl shadow-lg p-8">
-            <h2 className="text-2xl font-bold mb-6">Send Us a Message</h2>
+        <div className="space-y-2 text-sm text-gray-700">
+          <p className="flex items-start gap-2">
+            <FaPhoneAlt className="mt-0.5 text-green-600" />
+            <span>
+              +91 99744 51950<br />
+              +91 97123 04660
+            </span>
+          </p>
 
-            <form className="space-y-4">
-              <input
-                type="text"
-                placeholder="Full Name *"
-                className="w-full border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-400"
-              />
-
-              <input
-                type="tel"
-                placeholder="Phone Number *"
-                className="w-full border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-400"
-              />
-
-              <input
-                type="email"
-                placeholder="Email Address *"
-                className="w-full border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-400"
-              />
-
-              <select className="w-full border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-400">
-                <option>General Inquiry</option>
-                <option>Vehicle Purchase</option>
-                <option>Test Drive Booking</option>
-                <option>Service & Support</option>
-                <option>Financing Options</option>
-                <option>Corporate Sales</option>
-              </select>
-
-              <textarea
-                rows="4"
-                placeholder="Message *"
-                className="w-full border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-400"
-              ></textarea>
-
-              <button
-                type="submit"
-                className="w-full bg-green-950 text-white py-3 rounded-lg font-semibold hover:bg-green-600 transition"
-              >
-                Send Message
-              </button>
-            </form>
-          </div>
+          <p className="flex items-start gap-2">
+            <FaEnvelope className="mt-0.5 text-green-600" />
+            <span>
+              info@greenvoltev.in<br />
+              sales@greenvoltev.in
+            </span>
+          </p>
         </div>
-      </section>
+      </div>
+
+      {/* WORKING HOURS */}
+      <div className="bg-white rounded-2xl shadow-lg p-6">
+        <h3 className="text-lg font-semibold mb-3 flex items-center gap-2">
+          {/* <FaClock className="text-green-600" /> */}
+          Working Hours
+        </h3>
+
+        <p className="text-sm text-gray-700 flex items-center gap-2">
+          <FaClock className="text-green-600" />
+          Mon – Sat : 9:30 AM – 7:30 PM
+        </p>
+      </div>
+    </div>
+
+    {/* ================= RIGHT: CONTACT FORM ================= */}
+    <div className="bg-gray-50 rounded-2xl shadow-lg p-10 self-start ">
+      <h2 className="text-xl font-semibold mb-10 text-green-950">
+        Send Us a Message
+      </h2>
+
+      <form className="space-y-3">
+        <input
+          type="text"
+          placeholder="Full Name *"
+          className="w-full border rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-400"
+        />
+
+        <input
+          type="tel"
+          placeholder="Phone Number *"
+          className="w-full border rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-400"
+        />
+
+        <input
+          type="email"
+          placeholder="Email Address *"
+          className="w-full border rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-400"
+        />
+
+        <select className="w-full border rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-400">
+          <option>General Inquiry</option>
+          <option>Vehicle Purchase</option>
+          <option>Test Drive Booking</option>
+          <option>Service & Support</option>
+          <option>Financing Options</option>
+        </select>
+
+        <textarea
+          rows="3"
+          placeholder="Message *"
+          className="w-full border rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-400"
+        />
+
+        <button
+          type="submit"
+          className="w-full bg-green-950 text-white py-2.5 rounded-md text-sm font-semibold hover:bg-green-600 transition"
+        >
+          Send Message
+        </button>
+      </form>
+    </div>
+
+  </div>
+</section>
 
       {/* ================= FOOTER CTA ================= */}
       <footer className="bg-green-950 text-white">
